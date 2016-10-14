@@ -2,15 +2,20 @@
 вид /site/about. Для этого создадим файл web/.htaccess с содержимым как рекомендуют в оф. гайде:
 
 Options +FollowSymLinks
+
 IndexIgnore */*
 ------ Folder web --------
+
 RewriteEngine on
 
 # if a directory or a file exists, use it directly
+
 RewriteCond %{REQUEST_FILENAME} !-f
+
 RewriteCond %{REQUEST_FILENAME} !-d
 
 # otherwise forward it to index.php
+
 RewriteRule . index.php
 
 ------- Folder site -------
